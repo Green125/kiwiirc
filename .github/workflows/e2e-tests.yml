@@ -5,7 +5,7 @@ name: e2e Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, working-on-pr-items ]
   pull_request:
     branches: [ master ]
 
@@ -38,7 +38,7 @@ jobs:
     - run: cp kiwiirc-root/tests/e2e/webiirc-config/config.conf webircgateway-root/config.conf # copy over Web IRC Gateway config
     - run: sed -i 's/https:\/\/localdev.clients.kiwiirc.com/http:\/\/localhost:8080/' kiwiirc-root/static/config.json # change over Kiwi IRC config so that app can be run locally
     - run: cd webircgateway-root && ./webircgateway --config=config.conf & # run Web IRC Gateway
-    - run: cd kiwiirc-root && npm i && npm run dev & # run Kiwi IRC
+    - run: cd kiwiirc-root && yarn && npm run dev & # run Kiwi IRC
     - run: ./kiwiirc-root/tests/e2e/wait-for-kiwi.sh # wait for Kiwi IRC to be up and running (returning HTTP status code 200)
     - run: cd kiwiirc-root/tests/e2e && npm ci # install packages for 2e2 tests
     - run: cd kiwiirc-root/tests/e2e && npm run test-single --spec cypress/integration/userOne.js &  # run the first  functional test
