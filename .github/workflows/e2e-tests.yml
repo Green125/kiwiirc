@@ -40,6 +40,6 @@ jobs:
     - run: cd webircgateway-root && ./webircgateway --config=config.conf & # run Web IRC Gateway
     - run: cd kiwiirc-root && yarn && yarn run dev & # run Kiwi IRC
     - run: ./kiwiirc-root/tests/e2e/wait-for-kiwi.sh # wait for Kiwi IRC to be up and running (returning HTTP status code 200)
-    - run: cd kiwiirc-root/tests/e2e && yarn ci # install packages for 2e2 tests
+    - run: cd kiwiirc-root/tests/e2e && yarn # install packages for e2e tests
     - run: cd kiwiirc-root/tests/e2e && yarn run test-single --spec cypress/integration/userOne.js &  # run the first  functional test
     - run: cd kiwiirc-root/tests/e2e && yarn run test-single --spec cypress/integration/userTwo.js # run the second functional test
