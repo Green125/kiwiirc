@@ -16,7 +16,6 @@
         "deps:upgrade": "yarn deps:clean && yarn upgrade && yarn deps:sync && yarn install",
         "deps:sync": "npx syncyarnlock --keepPrefix --save",
         "docker:build": "./scripts/docker-build.sh",
-        "docker:push": "./scripts/docker-push.sh",
         "docker:upgrade": "yarn deps:upgrade && yarn bump && yarn docker:build && yarn docker:push",
         "format:fix": "prettier --write '**/*.{js,json}'",
         "format": "prettier --check '**/*.{js,json}'",
