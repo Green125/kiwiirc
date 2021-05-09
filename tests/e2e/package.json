@@ -6,8 +6,6 @@
     "scripts": {
         "test": "yarn run lint-fix && cypress run",
         "test-single": "yarn run lint-fix && cypress run --spec process.env.spec",
-        "bump:major": "npm version --no-commit-hooks --no-git-tag-version major",
-        "bump:minor": "npm version --no-commit-hooks --no-git-tag-version minor",
         "bump": "./scripts/version-bump.sh",
         "c": "yarn commit",
         "commit": "npx git-cz",
