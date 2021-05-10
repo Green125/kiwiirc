@@ -4,7 +4,8 @@
     "description": "A skeleton for every Cypress repository",
     "main": "",
     "scripts": {
-        "test-single": "yarn run lint-fix && cypress run --spec process.env.spec"
+        "test-single": "yarn run lint-fix && cypress run --spec process.env.spec",
+        "lint-fix": "npx eslint --fix \"**/integration/**/*.js\""
     },
     "husky": {
         "hooks": {
