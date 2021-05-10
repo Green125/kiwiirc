@@ -4,30 +4,7 @@
     "description": "A skeleton for every Cypress repository",
     "main": "",
     "scripts": {
-        "test": "yarn run lint-fix && cypress run",
-        "test-single": "yarn run lint-fix && cypress run --spec process.env.spec",
-        "bump": "./scripts/version-bump.sh",
-        "c": "yarn commit",
-        "commit": "npx git-cz",
-        "cypress:debug": "yarn report:clean && cypress open",
-        "cypress": "yarn report:clean && cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter.config.json",
-        "deps:clean": "rm -rf node_modules",
-        "deps:install": "yarn install --frozen-lockfile",
-        "deps:upgrade": "yarn deps:clean && yarn upgrade && yarn deps:sync && yarn install",
-        "deps:sync": "npx syncyarnlock --keepPrefix --save",
-        "format:fix": "prettier --write '**/*.{js,json}'",
-        "format": "prettier --check '**/*.{js,json}'",
-        "lint": "npx eslint \"**/integration/**/*.js\"",
-        "lint-fix": "npx eslint --fix \"**/integration/**/*.js\"",
-        "report:clean": "rm -rf artifacts/",
-        "report:get-assets": "mkdir -p artifacts/mochawesome-report/assets/ && cp -R artifacts/screenshots/ artifacts/mochawesome-report/assets/ 2>/dev/null || :",
-        "report:get-results": "npx mochawesome-merge --reportDir artifacts/mochawesome-sources > mochawesome.json",
-        "report:generate": "npx marge mochawesome.json -o ./artifacts/mochawesome-report && rm mochawesome.json",
-        "report:open": "open artifacts/mochawesome-report/mochawesome.html",
-        "report": "yarn report:get-assets && yarn report:get-results && yarn report:generate",
-        "secrets": "yarn secrets:setup && yarn secrets:edit",
-        "secrets:setup": "cp -i cypress/fixtures/config/cypress.secrets.template.json ./cypress.env.json",
-        "secrets:edit": "open -t cypress.env.json &> /dev/null || xdg-open ./cypress.env.json &> /dev/null || echo 'Failed to open the file ./cypress.env.json for editing'; exit 1"
+        "test-single": "yarn run lint-fix && cypress run --spec process.env.spec"
     },
     "husky": {
         "hooks": {
