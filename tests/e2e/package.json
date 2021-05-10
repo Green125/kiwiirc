@@ -25,10 +25,7 @@
     "eslintIgnore": [
         "artifacts/**/*.js"
     ],
-    "eslintConfig": {
-        "root": true
-    },
-    "author": "Diogo Nunes",
+    "author": "A Beck",
     "license": "MIT",
     "devDependencies": {
         "@testing-library/cypress": "^4.2.0",
