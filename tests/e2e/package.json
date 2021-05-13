@@ -4,27 +4,8 @@
     "description": "A skeleton for every Cypress repository",
     "main": "",
     "scripts": {
-        "test-single": "yarn run lint-fix && cypress run --spec process.env.spec",
-        "lint-fix": "npx eslint --fix \"**/integration/**/*.js\""
+        "test-single": "cypress run --spec process.env.spec"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "**/*.{js,json,md}": [
-            "prettier --write",
-            "git add"
-        ],
-        "**/*.js": [
-            "eslint",
-            "git add"
-        ]
-    },
-    "eslintIgnore": [
-        "artifacts/**/*.js"
-    ],
     "author": "A Beck",
     "license": "MIT",
     "devDependencies": {
@@ -36,11 +17,7 @@
         "cypress-plugin-retries": "^1.5.2",
         "cypress-select-tests": "^1.5.7",
         "cypress-wait-until": "^1.7.1",
-        "eslint": "^6.8.0",
-        "eslint-plugin-cypress": "^2.11.1",
         "git-cz": "^3.3.0",
-        "husky": "^3.1.0",
-        "lint-staged": "^9.5.0",
         "mocha": "5.2.0",
         "mocha-junit-reporter": "^1.23.3",
         "mochawesome": "^4.1.0",
