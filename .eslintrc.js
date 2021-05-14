@@ -10,7 +10,8 @@ module.exports = {
     extends: [
         'plugin:vue/recommended',
         '@vue/airbnb',
-        'standard'
+        'standard',
+        'plugin:cypress/recommended'
     ],
     env: {
         'browser': true,
@@ -69,7 +70,7 @@ module.exports = {
         files: [
             '**/__tests__/*.{j,t}s?(x)',
             '**/tests/unit/**/*.spec.{j,t}s?(x)',
-            '**/tests/e2e/cypress/**/*.js',
+            '**/tests/e2e/cypress/cypress/**/*.js',
         ],
         env: {
             jest: true,
